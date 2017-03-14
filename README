@@ -1,0 +1,46 @@
+Utlização
+	Criar um schema MySQL chamado 'teste' e executar o dump contido na pasta /back-end/dump.
+	Na raiz do projeto executar o comando 'npm run serve:dev',
+	será cirado um servidor local na porta 3333 'localhost:3333' 
+
+----------------------------
+API - Back-end
+URL's
+(HTTP GET) /produto/id? 
+	Espera um opcional paramêtro 'id',caso seja
+	passado o parâmetro retorna o produto especifico,
+	caso contrário retorna todos os produtos.
+
+(HTTP POST) /produto
+	Cria um novo registro de prouto,
+	espera os campos:
+	{
+		product_name       :'string(required)',
+		product_description :'string(required)',
+		product_price       :'double(required)',
+		product_amount      :'int(required)',
+		is_active           :'boolean(required)',
+	}
+(HTTP PUT) /produto/id
+	Atualiza um registro de produto, necessita o parâmetro 'id',
+	espera os campos:
+	{
+		product_name       :'string(required)',
+		product_description :'string(required)',
+		product_price       :'double(required)',
+		product_amount      :'int(required)',
+		is_active           :'boolean(required)',
+	}
+		
+(HTTP DELETE) /produto/id
+	Deleta um produto, espera o parametro 'id'
+
+(HTTP POST) /produto/filtro
+	Filtra produtos por 'product_name'
+	espera os campos:
+	{
+		product_name : 'string'	
+	}
+
+
+
